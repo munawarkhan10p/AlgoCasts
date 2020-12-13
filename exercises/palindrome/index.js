@@ -8,14 +8,13 @@
 //   palindrome("abcdefg") === false
 
 function palindrome(str) {
-    debugger;
     return  str.split('').every( (char, i) => {
         return char === str[str.length - i -1]
     });
 }
 
 palindrome('aba');
-module.exports = palindrome;
+
 
 
 // Solution 1
