@@ -10,3 +10,21 @@
 function capitalize(str) {}
 
 module.exports = capitalize;
+
+
+// here we also using trim incase we got strim with empty spaces in start
+
+function capitalize(str) {
+    let words = [];
+  
+    for (let word of str.trim().split(' ')) {
+     words.push(word[0].toUpperCase() + word.slice(1));
+    }
+  
+    console.log('sentence is',words.join(' '));
+  
+    return words.join(' ');
+  
+  }
+  
+  capitalize(' a brown fox');

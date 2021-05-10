@@ -5,7 +5,7 @@
 // maxChar("abcccccccd") === "c"
 // maxChar("apple 1231111") === "1"
 
-// Common string questions 
+// Common string questions   have also add typescript solution as well
 
 // What is the most common character in the string ?
 
@@ -42,3 +42,27 @@ module.exports = maxChar;
 //         chars[char] = chars[char] + 1 || 1;
    
 // }
+
+// typscript way
+
+function checkMaxChar(str:string): void {
+
+  const charMap: {[key: string]: number} = {}
+
+   for(let char of str) {
+       if(charMap[char]) {
+           charMap[char]++
+       } else {
+           charMap[char] = 1
+       }
+   }
+
+    let max: number = 0;
+    let maxChar: string = '';
+
+    for(let char in charMap) {
+        if(charMap[char] > max) {
+            max = charMap[char];
+            maxChar = char;
+        }
+    }
